@@ -41,8 +41,12 @@ class Drop < OpenStruct
     %w( .md .mdown .markdown ).include? extension
   end
 
+  def html?
+    %w( .htm .html ).include? extension
+  end
+
   def code?
-    !!lexer_name
+    !!lexer_name && !html?
   end
 
   def subscribed?

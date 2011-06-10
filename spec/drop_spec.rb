@@ -101,6 +101,28 @@ describe Drop do
   end
 
 
+  it 'is not html when an image' do
+    drop = Drop.new :item_type   => 'image',
+                    :content_url => 'http://f.cl.ly/items/hhgttg/cover.png'
+
+    deny { drop.html? }
+  end
+
+  it 'is html with the extension html' do
+    drop = Drop.new :item_type   => 'text',
+                    :content_url => 'http://f.cl.ly/items/hhgttg/chapter1.html'
+
+    assert { drop.html? }
+  end
+
+  it 'is html with the extension htm' do
+    drop = Drop.new :item_type   => 'text',
+                    :content_url => 'http://f.cl.ly/items/hhgttg/chapter1.htm'
+
+    assert { drop.html? }
+  end
+
+
   it 'is not code when an image' do
     drop = Drop.new :item_type   => 'image',
                     :content_url => 'http://f.cl.ly/items/hhgttg/cover.png'
@@ -111,6 +133,13 @@ describe Drop do
   it 'is not code when text' do
     drop = Drop.new :item_type   => 'text',
                     :content_url => 'http://f.cl.ly/items/hhgttg/chapter1.txt'
+
+    deny { drop.code? }
+  end
+
+  it 'is not code when html' do
+    drop = Drop.new :item_type   => 'text',
+                    :content_url => 'http://f.cl.ly/items/hhgttg/chapter1.html'
 
     deny { drop.code? }
   end
