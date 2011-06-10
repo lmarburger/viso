@@ -1,0 +1,33 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://f.cl.ly:80/items/hhgttg/chapter1.html
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-amz-id-2: 
+      - PU8ETrFPrX2sDGqi4/qy5gtaLewpuMH/y7qeXrixZs2DSpPXTYvxne0JtQQmQ9Hh
+      x-amz-request-id: 
+      - D6579C17B42E6738
+      date: 
+      - Fri, 10 Jun 2011 13:37:11 GMT
+      last-modified: 
+      - Fri, 10 Jun 2011 13:35:17 GMT
+      etag: 
+      - "\"3a96b05c57f87254adb0af525e710630\""
+      accept-ranges: 
+      - bytes
+      content-type: 
+      - binary/octet-stream
+      content-length: 
+      - "496"
+      server: 
+      - AmazonS3
+    body: "<html>\n  <body>\n    <h1>Chapter 1</h1>\n\n    <p>\n      The house stood on a slight rise just on the edge of the village. It stood\n      on its own and looked out over a broad spread of West Country farmland.\n      Not a remarkable house by any means\xE2\x80\x94it was about thirty years old,\n      squattish, squarish, made of brick, and had four windows set in the front\n      of a size and proportion which more or less exactly\n      <strong>failed</strong> to please the eye.\n    </p>\n  </body>\n\
+      </html>\n"
+    http_version: "1.1"

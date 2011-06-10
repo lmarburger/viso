@@ -247,6 +247,22 @@ describe Drop do
   end
 
   # TODO: Fix this test after webmock supports the latest em-http-request.
+  it 'fetches and parses the content of an html file' do
+    EM.synchrony do
+      VCR.use_cassette 'html' do
+        drop = Drop.new :item_type   => 'unknown',
+                        #:content_url => 'http://cl.ly/hhgttg/chapter1.md'
+                        :content_url => 'http://f.cl.ly/items/hhgttg/chapter1.html'
+
+
+        assert { drop.content.start_with? '<html>' }
+
+        EM.stop
+      end
+    end
+  end
+
+  # TODO: Fix this test after webmock supports the latest em-http-request.
   it 'fetches and highlights the syntax of a code file' do
     EM.synchrony do
       VCR.use_cassette 'ruby' do
