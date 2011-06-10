@@ -76,6 +76,8 @@ class Viso < Sinatra::Base
         format.html do
           if @drop.bookmark?
             redirect_to_api
+          elsif @drop.html?
+            @drop.content
           else
             erb drop_template, :locals => { :body_id => body_id }
           end

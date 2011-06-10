@@ -194,6 +194,26 @@ describe Viso do
   end
 
   ## This test will fail until webmock can support the latest em-http-request
+  #it 'dumps the content of an html drop' do
+    #EM.synchrony do
+      #VCR.use_cassette 'html' do
+        #get '/hhgttg'
+        #EM.stop
+
+        #assert { last_response.ok? }
+
+        #headers = last_response.headers
+        #assert { headers['Cache-Control'] == 'public, max-age=900' }
+        #assert { headers['Vary']          == 'Accept' }
+        #assert { headers['Content-Type']  == 'text/html;charset=utf-8' }
+
+        #heading_tag = '<h1>Chapter 1</h1>'
+        #assert { last_response.body.include? heading_tag }
+      #end
+    #end
+  #end
+
+  ## This test will fail until webmock can support the latest em-http-request
   #it 'dumps the content of a markdown drop' do
     #EM.synchrony do
       #VCR.use_cassette 'markdown' do
